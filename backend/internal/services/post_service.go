@@ -75,7 +75,7 @@ func (s *PostService) GetAllPosts() ([]*models.Post, error) {
 	}
 
 	// Si no hay posts, devolver lista vacía (no es error)
-	// para evitar retornar nil
+	// No retorna nil
 	if posts == nil {
 		return []*models.Post{}, nil
 	}
