@@ -66,13 +66,15 @@ func (s *PostService) CreatePost(req *models.CreatePostRequest, userID int) (*mo
 	return post, nil
 }
 
-// GetAllPosts obtiene todos los posts
+// GetAllPosts obtiene todos los posts del sistema.
+// Retorna una lista vacía si no hay posts, nunca retorna nil.
 func (s *PostService) GetAllPosts() ([]*models.Post, error) {
 	posts, err := s.postRepo.FindAll()
 	if err != nil {
 		return nil, err
 	}
 
+	// Si no hay posts, devolver lista vacía (no es error)
 	if posts == nil {
 		return []*models.Post{}, nil
 	}
