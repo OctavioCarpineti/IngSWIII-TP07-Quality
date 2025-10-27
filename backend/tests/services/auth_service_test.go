@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
-// Constantes para tests
+// Constantes para tests comunes
 const (
 	testEmail    = "test@example.com"
 	testPassword = "123456"
